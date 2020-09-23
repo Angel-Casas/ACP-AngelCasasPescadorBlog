@@ -1,0 +1,17 @@
+extends layout-ES
+
+block content
+  header.form-header
+    h3.color Registro
+    h4.border-bottom
+      a(href="/ES/login") Ingresar
+  form#register-form(action="/ES/register" method="POST")
+    label(for="inputName") Nombre
+    input.border#inputName(type="name" name="name")
+    label(for="inputEmail") Correo Electrónico
+    input.border#inputEmail(type="email" name="email")
+    label(for="inputPassword") Contraseña
+    input.border#inputPassword(type="password" name="password")
+    label(for="inputPasswordConfirm") Repetir contraseña
+    input.border#inputPasswordConfirm(type="password" name="confirm_password")
+    button.button(name="submit" type="submit") Enviar

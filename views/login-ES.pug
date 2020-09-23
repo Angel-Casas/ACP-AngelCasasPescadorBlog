@@ -1,0 +1,19 @@
+extends layout-ES
+
+block content
+  header.form-header
+    h3.color Ingresar
+    h4.border-bottom
+      a(href="/ES/register") Registrarse
+  form#login-form(action="/ES/login" method="POST")
+    label(for="inputEmail") Correo Electrónico
+    input.border#inputEmail(type="email" name="email")
+    label(for="inputPassword") Contraseña
+    input.border#inputPassword(type="password" name="password")
+    button.button(name="submit" type="submit") Enviar
+    if errors 
+      if errors.email
+        p.errors= errors.email.message
+      else if errors.password
+        p.errors= errors.password.message
+    

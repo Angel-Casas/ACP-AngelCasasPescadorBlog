@@ -1,0 +1,28 @@
+extends layout-ES
+
+block content
+  header
+    h3.color Crear Nuevo Post
+  form(method='POST', action='/ES/new')
+    h4.color English
+    label(for='title') Title
+    input(id='title', class='form-input', name='title', type='text', placeholder='Title', required)
+    label(for='content') Content
+    textarea(id='content', class='form-textarea', name='content', type='text', placeholder='Content', rows='10', cols='50')
+    label(for='preview') Preview
+    textarea(id='preview', class='form-textarea', name='preview', type='text' placeholder='preview', rows='5', cols='50')
+    h4.color Español
+    label(for='titulo') Titulo
+    input(id='titulo', class='form-input', name='titulo', type='text', placeholder='Titulo', required)
+    label(for='contenido') Contenido
+    textarea(id='contenido', class='form-textarea', name='contenido', type='text', placeholder='Contenido', rows='10', cols='50')
+    label(for='previa') Previa
+    textarea(id='previa', class='form-textarea', name='previa', type='text' placeholder='previa', rows='5', cols='50')
+    label(for='tags') Tags
+    input(id='tags', class='form-input', name='tags', type='text', placeholder='Tags')
+    select(id='section', name='section', required)
+      option(value='CS') CS
+      option(value='MATH') MATH
+      option(value='ECONOMY') ECONOMY
+      option(value='NATURE') NATURE
+    input(type='submit', class='form-button', value='Submit')

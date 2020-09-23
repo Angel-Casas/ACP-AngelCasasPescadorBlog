@@ -1,0 +1,9 @@
+extends layout-EN
+
+block content
+  header
+    h3.color Delete post
+  h4.color= post.title
+  p= post.preview
+  form(method='POST', action='delete')
+    input(type='submit', class='form-button', value='Delete')

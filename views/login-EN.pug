@@ -1,0 +1,18 @@
+extends layout-EN
+
+block content
+  header.form-header
+    h3.color Login
+    h4.border-bottom
+      a(href="/EN/register") Register
+  form#login-form(action="/EN/login" method="POST")
+    label(for="inputEmail") Email
+    input.border#inputEmail(type="email" name="email")
+    label(for="inputPassword") Password
+    input.border#inputPassword(type="password" name="password")
+    button.button(name="submit" type="submit") Submit
+    if errors 
+      if errors.email
+        p.errors= errors.email.message
+      else if errors.password
+        p.errors= errors.password.message

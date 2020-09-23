@@ -1,0 +1,22 @@
+extends layout-ES
+
+block content
+  header
+    h2.color= title.replace('_', ' ')
+  ul.preview-ul
+    each post in tag_list
+      li.preview-li.border-bottom
+        article.post-preview
+          a(href="/ES/" + post.url)
+            h4= post.titulo
+            time.post-date(date-time=post.date) #{post.post_time_formatted}
+          p= post.previo
+          .entry-small
+            .tags
+              each tag in post.tags
+                a(href='/ES/tags/' + tag)= tag.toString().replace('_', ' ')
+              else
+                | *
+    else
+      li There are no posts.    
+  // End of preview-ul

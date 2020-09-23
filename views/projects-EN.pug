@@ -1,0 +1,72 @@
+extends layout-EN
+
+block content
+  section.ml-projects
+    header
+      h2.color Machine Learning Projects
+    p.project-intro Here is where I develop all my ideas and projects. Every project is accompanied by a blog post showing my thought 
+     | process and the problems I encounter while creating the project. These projects are not static and it is my 
+     | intention to keep improving on them and gaining feedback from users is a big part of this process, 
+     | so please enjoy reading the posts and using my apps. Any suggestions or improvements are welcomed and I can be 
+     | contacted directly through my 
+     a.color.border-bottom(href='/EN/about#contact') Contact page.
+      
+    .box-area
+      .box
+        h3.color Language Translation
+        img(src='/images/projects/language-translation.png' alt='Language Translation image.' width='200px' height='200px')
+        .detail
+          p Generate a Language Translation algorithm with Sequence to Sequence models. This is the model I use in my website!
+          a(href='')
+          p.alert Work in progress
+      .box
+        h3.color Sign Language Generator
+        img(src='/images/projects/sign-language.png' alt='Sign Language image.' width='200px' height='200px')
+        .detail
+          p Translate from any sound to sign-language with a Machine Learning model
+          a(href='')
+          p.alert Work in progress
+      .box
+        h3.color Clothing Classifier
+        img(src='/images/projects/clothing.jpg' alt='Cloting Classifier image.' width='200px' height='200px')
+        .detail
+          p Classify clothes from images and give useful information about the clothes. Achieved with Machine Learning.
+          a(href='')
+          p.alert Work in progress
+      .box
+        h3.color Talking heads
+        img(src='/images/projects/marcus.svg' alt='Marcus Aurelius lowpoly svg.' width='200px' height='200px')
+        .detail
+          p Can you imagine a talking head telling you a story?
+          a(href='')
+          p.alert Trabajo en proceso
+  // end .ml-projects
+  section.app-projects
+    header
+      h2.color Apps
+    .box-area
+      .box
+          h3.color Check
+          img(src='/images/projects/checkIntro.png' alt='Check app image.' width='200px' height='200px')
+          .detail
+            p Check allows friends and family members to reward each other for completing tasks they set themselves. 
+              | Rewards include gift cards or Bitcoin to directly tip users for completing their objectives.
+            a(href='')
+            p.alert Work in progress
+      .box
+        h3.color Game of Ur
+        img(src='/images/projects/gameofur.png' alt='Game of Ur image.' width='200px' height='200px')
+        .detail
+          p The Royal Game of Ur is a two-player strategy race board game that was first played in ancient 
+           | Mesopotamia during the early third Millennium BC.
+          a(href='https://angel-casas.github.io/GameOfUr/') Visit app
+          p.alert 
+      .box
+          h3.color Fox and the Chicken
+          img(src='/images/projects/zorroygallinas.png' alt='Fox and Chicen game image.' width='200px' height='200px')
+          .detail
+            p The Fox and the Chicken is an old game played in the Canary Islands and in many parts of Europe which shows 
+             | a high level of intelligence and skill even though it has very simple rules.
+            a(href='https://angel-casas.github.io/IntelligenceGame/') Visit app
+            p.alert 
+  // end .app-projects

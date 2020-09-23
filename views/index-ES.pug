@@ -1,0 +1,43 @@
+extends layout-ES
+
+block content
+  header
+    h2.color Bienvenido
+  blockquote.outline
+    p La autoeducación es, estoy convencido, el único tipo de educación que existe
+    cite Isaac Asimov
+  div#intro-message
+    p Es en el mismo espíritu que el de Isaac Asimov con el que quiero documentar mi proceso de aprendizaje, pues hace tiempo me topé con una idea que asentó firmemente mi forma de ver el mundo: apuntar hacia 
+      | la meta más valiosa que puedas concebir e ir acercandote gradualmente hacia la consecución de aquella meta mediante pasos graduales.
+    p En esta lógica y con esta convicción me pareció que escribir un blog y compartir mis ideas con cualquiera que se encuentre con estas páginas me sirve para acercarme 
+      | hacia la conquista de mis objetivos, pues al escribir mis ideas puedo obtener un conocimiento más claro sobre mis carencias y tal vez mi audiencia pueda ayudarme a correjir 
+      | aquellos fallos en los que caeré sin ser consciente.
+    p En este sentido, he tenido la suerte de hallar las cimas intelectuales que quiero conquistar durante mi vida, y al igual que un granjero siembra las semillas en la tierra 
+      | y entra en una relación viviente con la planta que crece para los años venideros, anhelo mantener esta relación que comencé hace algunos años en el campo de la ciencia de ordenadores, 
+      | la ciencia económica y el estudio de las matemáticas, siendo esta una relación que me llena con un sentimiento de plenitud a medida que enraiza mi conocimiento sobre el mundo que me rodea.
+    p Habiendo vivido la mayor parte de mi infancia rodeado de naturaleza, he aprendido a apreciar su belleza y he ido lentamente desarrollando una conciencia sobre los secretos y misterios 
+      | que ella esconde a los inconscientes, es por ello que he decidido introducir en este blog una sección dedicada exclusivamente a la belleza de la naturaleza.
+    p Los libros nos muestran cuán ignorantes eramos antes de abrir sus portadas, asi que en un esfuerzo por abrir todas las mentes y por elevar todos los espíritus que pueda, mantengo una sección 
+      | dedicada a ellos con algunas lineas a modo de resumen y un pequeño párrafo de ambito personal sobre porqué les podría ser de interés.
+  if post
+    .index-post
+      header
+        h3.color Post Aleatorio
+      article.post-preview
+        a(href="/ES/" + post.url)
+          h4= post.titulo
+          time.post-date(date-time=post.date) #{post.post_time_formatted}
+        p.preview= post.previo
+        .entry-small
+          .tags
+            each tag in post.tags
+              a(href='/ES/tags/' + tag)= tag.toString().replace('_', ' ')
+            else
+              | *
+  if tags.length
+    .index-tag-cloud
+      header
+        h3.color Etiquetas
+      .tags
+        for tag in tags
+          a(href='/ES/tags/' + tag)= tag.toString().replace('_', ' ')

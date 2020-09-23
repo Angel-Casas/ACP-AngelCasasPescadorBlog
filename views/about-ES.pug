@@ -1,0 +1,106 @@
+extends layout-ES
+
+block content
+  section.about
+    header
+      h2.color Sobre mí
+    .presentation
+      span.watermark &Aacute;ngel Casas Pescador
+      a.color(href='/images/personal/DSC_0393final.jpg')
+        img.presentationImg(src='/images/personal/DSC_0393final.jpg' alt='Yo en el campo.')
+      p
+        | Hola, mi nombre es Ángel y actualmente estoy trabajando en ampliar mi conocimiento sobre Aprendizaje Automático y Aprendizaje Profundo (dos ramas de las ciencias de la Inteligencia Artificial) 
+        | lo cual convierte a este blog en una experiencia imformativa y pedagógica muy potente.
+        br
+        | Para conseguir esto me he inscrito en unos cursos Online 
+        | relacionados con el campo de la Inteligencia Artificial y sobre programación en general.
+        br
+        | Esto me ha permitido conseguir un cierto nivel de competencia en este campo de conocimiento el cual solo quiero seguir conociendo a medida que profundizo más.
+        br
+        | Siendo altamente curioso desde una edad temprana mi interés se ha expandido hacia otros campos, 
+        | esto me permite obtener progresivamente una visión más articulada sobre las Ciencias de la Computación.
+        br
+      h3.color Logros:
+      p Completados exitosamente los siguientes cursos:
+      ul
+        li
+          | Deep Learning Nanodegree Foundation - 
+          a.color(href='/images/certificates/DeepLearningNanodegreeUdacity.pdf') Udacity Nanodegree Foundation Program
+        li
+          | Deep Learning - 
+          a.color(href='/images/certificates/DeepLearningCertificateCoursera.pdf') Coursera Stanford University
+          ul
+            li
+              | Neural Networks and Deep Learning - 
+              a.color(href='/images/certificates/NeuralNetworksandDeepLearningCoursera.pdf') Coursera Stanford University
+            li
+              | Improving Deep Neural Networks - 
+              a.color(href='/images/certificates/ImprovingDeepNeuralNetworksCoursera.pdf') Coursera Stanford University
+            li
+              | Structuring Machine Learning Projects - 
+              a.color(href='/images/certificates/StructuringMachineLearningProjectsCoursera.pdf') Coursera Stanford University
+            li
+              | Convolutional Neural Networks - 
+              a.color(href='/images/certificates/ConvolutionalNeuralNetworksCoursera.pdf') Coursera Stanford University
+            li
+              | Sequence Models - 
+              a.color(href='/images/certificates/SequenceModelsCoursera.pdf') Coursera Stanford University
+        li
+          | Machine Learning - 
+          a.color(href='/images/certificates/MachineLearningCertificateCoursera.pdf') Coursera Stanford University
+        li
+          | Introduction to Computer Science and Programming using Python - 
+          a.color(href='#') EDX 6.00.1x MITx
+        li
+          | Front-End Web Developer Certificate - 
+          a.color(href='/images/certificates/FrontEndWebDeveloper.pdf') EDX World Wide Web Consortium (W3C)
+          ul
+            li
+              | HTML5 and CSS fundamentals - 
+              a.color(href='/images/certificates/HTML5andCSSfundamentals.pdf') EDX W3Cx
+            li
+              | CSS Basics - 
+              a.color(href='/images/certificates/CSSBasics.pdf') EDX W3Cx
+            li
+              | HTML5 Apps and Games - 
+              a.color(href='/images/certificates/HTML5AppsandGames.pdf') EDX W3Cx
+            li
+              | HTML5 Coding Essentials and Best Practices - 
+              a.color(href='/images/certificates/HTML5CodingEssentialsAndBestPractices.pdf') EDX W3Cx
+            li 
+              | Javascript Introduction - 
+              a.color(href='/images/certificates/JavascriptIntroduction.pdf') EDX W3Cx
+      h3.color Proyectos
+      p
+        | Los proyectos son una gran parte de mi avanze hacia comprender sobre cualquier tema y es por eso que he publicado 
+        | mis trabajos en una misma página para que sea más facil su difusión.
+      p
+        | Descubre todo sobre mis proyectos 
+        a.color(href='/projects') Aquí.
+      h3.color Lugar de Residencia.
+      p
+        | Nacido en Las Palmas de Gran Canaria, España.
+        | Actualmente vivo en el mismo lugar y traigo conmigo algunas fotografías para mostrar la belleza de mi hogar.
+    .images-group
+      .row
+        .column
+          a.color(href='/images/personal/retocada2.jpg')
+            img(src='/images/thumbnails/retocada2_tn.jpg' alt='Sunset in Gran Canaria')
+          a.color(href='/images/personal/IMG_20170117_123542.jpg')
+            img(src='/images/thumbnails/IMG_20170117_123542_tn.jpg' alt='View from the top of Gran Canaria')
+          a.color(href='/images/personal/panacea.jpg')
+            img(src='/images/thumbnails/panacea_tn.jpg' alt='North coast of Gran Canaria')
+        .column
+          a.color(href='/images/personal/DSC_0095.jpg')
+            img(src='/images/thumbnails/DSC_0095_copia_tn.jpg' alt='Parcial lunar eclipse outside my home, Las Palmas de Gran Canaria')
+          a.color(href='/images/personal/DSC_0252.jpg')
+            img(src='/images/thumbnails/DSC_0252_copia_tn.jpg' alt='Beautiful Sunset at the beach, Gran Canaria')
+          a.color(href='/images/personal/lomax.jpg')
+            img(src='/images/thumbnails/lomax_copia_tn.jpg' alt='Waves crashing in the Sunset')
+      // end .row
+    // end .images-group
+    header
+      h3#contact.color Contacto
+    h4.color Email
+    a(href="#" target='_blank' rel='noopener noreferrer' data-contact='YW5nZWwuY2FzYXNAcHJvdG9ubWFpbC5jb20=' data-subject='UGVyc29uYWxCbG9n' onfocus="this.href = 'mailto:' + atob(this.dataset.contact) + '?subject=' + atob(this.dataset.subject || '')") Enviar un email  
+  // end .about

@@ -1,0 +1,28 @@
+extends layout-EN
+
+block content
+  header
+    h2.color Edit Post
+  form(method='POST', action='edit')
+    h4.color English
+    label(for='title-edit') Title
+    input(id='title-edit', name='title', class='form-input', type='text', value= post.english.title, required)
+    label(for='content-edit') Content
+    textarea(id='content-edit', name='content', class='form-textarea', type='text', placeholder='Content', rows='10', cols='50')= post.english.body
+    label(for='preview-edit') Preview
+    textarea(id='preview-edit', name='preview', class='form-textarea', type='text' placeholder='preview', rows='5', cols='50')= post.english.preview
+    h4.color Español
+    label(for='titulo-edit') Titulo
+    input(id='titulo-edit', class='form-input', name='titulo', type='text', value=post.español.title, required)
+    label(for='contenido-edit') Contenido
+    textarea(id='contenido-edit', class='form-textarea', name='contenido', type='text', placeholder='Contenido', rows='10', cols='50')= post.español.body
+    label(for='previa-edit') Previa
+    textarea(id='previa-edit', class='form-textarea', name='previa', type='text' placeholder='previa', rows='5', cols='50')= post.español.preview
+    label(for='tags-edit') Tags
+    input(id='tags-edit', name='tags', class='form-input', type='text', value=post.tag_list)
+    select(name='section', required)
+      option(value='CS') CS
+      option(value='MATH') MATH
+      option(value='ECONOMY') ECONOMY
+      option(value='NATURE') NATURE
+    input(type='submit', class='form-button', value='Submit')

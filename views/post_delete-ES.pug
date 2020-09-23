@@ -1,0 +1,9 @@
+extends layout-ES
+
+block content
+  header
+    h3.color Borrar Post
+  h4.color= post.titulo
+  p= post.previo
+  form(method='POST', action='delete')
+    input(type='submit', class='form-button', value='Delete')

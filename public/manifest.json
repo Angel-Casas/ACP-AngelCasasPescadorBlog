@@ -1,0 +1,9 @@
+{
+    "name": "Ángel Casas Pescador - Blog",
+    "short_name": "ACP",
+    "description": "Personal blog about Computer Science, Economics, Mathematics and Nature.",
+    "start_url": "/",
+    "display": "fullscreen",
+    "theme_color": "#ddb64e",
+    "background_color": "#ddb64e"
+}

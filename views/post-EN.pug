@@ -1,0 +1,159 @@
+extends layout-EN
+
+block content
+  .post-wrapper
+    nav.nav-blog.hidden(role='navigation')
+      div.border-top
+        h5.color Table of Contents:
+    // End of .nav-blog
+    article.post
+      #entry
+        header
+          h3.color(id='header-1')= post.title
+        small.entry-small
+          .entry-date Published on:
+            time(class='entry-time', datetime=post.date)  #{post.post_time_formatted}
+          - let total = 0;
+          each comment in post.comments
+            if comment.approved
+              - total += 1;
+          .entry-comments
+            a(href="#blog-comments") Comments: #{total}
+          .tags
+            each tag in post.tags
+              a(href='/EN/tags/' + tag)= tag.toString().replace('_', ' ')
+          .entry-audio
+            div.trinityAudioPlaceholder
+          if session.user && session.user.role === "admin"
+            button.button(type="submit" onclick="deletePost()") Delete
+        .post-entry
+          | !{post.body}
+        .blog-footer
+            script(async data-uid="1ad8f3d068" src="https://skilled-maker-163.ck.page/1ad8f3d068/index.js")
+        #share-box
+          h5.color Share this
+          .a2a_kit.a2a_kit_size_32.a2a_default_style
+            a.a2a_button_facebook
+            a.a2a_button_twitter
+            a.a2a_button_email
+            a.a2a_button_pocket
+            a.a2a_button_whatsapp
+      #blog-comments
+        header
+          h4.color Comments
+        .comment-count #{total} Comments.
+        ul.comment-ul
+          - var commentIndex = 1;
+          each comment in post.comments
+            if comment.approved
+              - var time = new Date(comment.date)
+              li.border-bottom(id='comment-'+commentIndex)
+                .meta
+                  .comment-number
+                    span.color= commentIndex
+                  span.author-name.color= comment.name
+                  |  said on 
+                  small= time.toLocaleDateString('en-GB', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
+                .quote
+                  p= comment.content
+                if session.user && session.user.role === "admin"
+                  button.button(onclick=`deleteComment(${JSON.stringify(comment._id)})`) Delete
+                - commentIndex += 1;
+            else
+              if session.user && session.user.role === "admin"
+                h3.color Not approved
+                span.author-name.color= comment.name
+                .quote
+                  p= comment.content
+                button.button(onclick=`approveComment(${JSON.stringify(comment._id)})`) Approve
+                button.button(onclick=`deleteComment(${JSON.stringify(comment._id)})`) Delete
+                - commentIndex += 1;
+          else
+            li Be the first to comment!
+        form#comments-form(method='POST', action=post._id + '/comment')
+          h4.color Leave your comment
+          label(for='comment-name')
+            input(type='text', name='name', placeholder='Name (Optional)', maxlength=20, id='comment-name')
+          label(for='comment-content')
+            textarea(type='text', name='content', rows='5', cols='20', placeholder='Comment', id='comment-content')
+          input(type='submit', value='Submit', class='form-button')
+      // End of #blog-comments
+    // End of .post
+    aside.extra-aside
+      .donation-box.border-top
+        h4.color Donating = Supporting
+        .donation-text
+          p I pour great amounts of time, effort, though and resources into growing this blog and keeping all the content free forever (and ad-free). 
+          p This requires many hours a month to research and compile all the information necessary to produce each post and this leads to a 
+            | high need for income in order to become sustainable and to keep improving. If you find joy and value what is being produced here, 
+            | please consider becoming a Sustaining Patron with a recurring monthly donation of your choosing between a cup of coffee and a good lunch.
+            | Your support helps keep free, public and valuable articles going and it really matters.
+          //- .donation-amount
+          //-   h5.color MONTHLY DONATION
+          //-   p $3 / month
+          //-   p $5 / month
+          //-   p $7 / month
+          //-   p $10 / month
+          //-   p $25 / month
+          //-   a.donation-button START NOW
+          //-   h5.color ONE-TIME DONATION
+          //-   p You can also become a one-time Supporter by donating a single time with any amount you want:
+          //-   a.donation-button GIVE NOW
+          .donation-bitcoin
+            h5.color Bitcoin
+            p If you enjoy the Bitcoin experience you can donate to this Bitcoin address directly:
+            p 3BMEXXLP2V9W86TK75wUzcS3MLUKixL28k
+          //- p Want to cancel a recurring donation?
+          //- a.underline(href='') Go Here.
+      // End of .donation-box
+      .blog-list.border-top
+        h4.color Last Posts
+        .list-box
+          for elem in post_list
+            a(href="/EN/" + elem.url)
+              h5= elem.title
+      // End of .blog-list
+    script(async src="https://static.addtoany.com/menu/page.js")
+    script(type="text/javascript").
+      function deletePost() {
+        window.location = window.location.href + "/delete";
+      };
+      function deleteComment(id) {
+        var stringUrl = window.location.href;
+        if (stringUrl.includes("#blog-comments")) {
+          stringUrl = window.location.href.replace("#blog-comments", "");
+        }
+       const url = stringUrl + "/delete_comment";
+
+       fetch(url, {
+         method: "POST",
+         headers: { "Content-Type": "application/json" },
+         body: JSON.stringify({ id })
+       })
+        .then(response => location.reload());
+      };
+      function approveComment(id) {
+        let stringUrl = window.location.href;
+        if (window.location.href.includes("#blog-comments")) {
+          stringUrl = window.location.href.replace("#blog-comments", "");
+        }
+        const url = stringUrl + "/approve";
+
+        fetch(url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ id })
+        })
+         .then(response => location.reload());
+      };
+    script(type='text/javascript').
+      document.querySelector('.nav-blog').className = document.querySelector('.nav-blog').className.replace('hidden', 'show')
+      var nav = document.querySelector('.nav-blog > div');
+      var list = initTOC({
+        selector: 'h3, h4',
+        scope: '#entry',
+        prefix: 'header'
+      })
+      console.log(list.children)
+      nav.appendChild(list);
+    script(type='text/javascript' src='https://trinitymedia.ai/sas/player/trinity.php?sCampaignID=2900000364&GDPR=$$GDPR_MACRO$$&GDPR_CONSENT=$$GDPR_CONSENT_MACRO$$')
