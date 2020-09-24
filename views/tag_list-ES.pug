@@ -10,7 +10,7 @@ block content
           a(href="/ES/" + post.url)
             h4= post.titulo
             time.post-date(date-time=post.date) #{post.post_time_formatted}
-          p= post.previo
+          p.preview= post.previo
           .entry-small
             .tags
               each tag in post.tags
