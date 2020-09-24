@@ -274,18 +274,12 @@ exports.post_edit_post = [
     // Data form is valid. Create a post object with escaped and trimmed data
     var post =
       {
-        english:
-          {
-            title: req.body.title,
-            body: req.body.content,
-            preview: req.body.preview
-          },
-        español:
-          {
-            title: req.body.titulo,
-            body: req.body.contenido,
-            preview: req.body.previa
-          },
+        title: req.body.title,
+        body: req.body.content,
+        preview: req.body.preview,
+        titulo: req.body.titulo,
+        cuerpo: req.body.contenido,
+        previo: req.body.previa,
         section: req.body.section,
         tags: []
       };
