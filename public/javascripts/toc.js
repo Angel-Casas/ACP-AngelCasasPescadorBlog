@@ -55,10 +55,10 @@
   var setAttrs = function (overwrite, prefix) {
     return function (src, target, index) {
       var content = src.textContent;
-      var pre = prefix + "-" + (index);
+      var pre = prefix + "-" + index;
       target.textContent = content;
 
-      var id = overwrite ? pre : (src.parentElement.id || pre);
+      var id = overwrite ? pre : src.parentElement.id || pre;
 
       id = encodeURIComponent(id);
 
@@ -153,12 +153,12 @@ if (window.location.href.includes("post")) {
     const observer = new IntersectionObserver((entries) => {
       console.log("NEW OBSERVER");
       entries.forEach((entry) => {
-          console.log(entry.target);
-          console.log(entry.intersectionRatio);
+        console.log(entry.target);
+        console.log(entry.intersectionRatio);
         const id = entry.target.getAttribute("id");
         if (entry.intersectionRatio > 0) {
-            console.log(id);
-            console.log(document.querySelector(`nav li a[href="#${id}]`));
+          console.log(id);
+          console.log(document.querySelector(`nav li a[href="#${id}]`));
           document
             .querySelector(`nav li a[href="#${id}"]`)
             .parentElement.classList.add("active");

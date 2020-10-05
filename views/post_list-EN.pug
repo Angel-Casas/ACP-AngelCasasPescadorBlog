@@ -8,6 +8,7 @@ block content
       li.preview-li.border-bottom
         article.post-preview
           a(href="/EN/" + post.url)
+            div.cover(style=`background-image: url(${post.cover});`)
             h4= post.title
             time.post-date(date-time=post.date) #{post.post_time_formatted}
           p.preview= post.preview

@@ -9,13 +9,13 @@ const users = [
     name: "Ángel",
     email: "a.casas.lp@gmail.com",
     password: "123456789",
-    role: "admin"
+    role: "admin",
   },
   {
     name: faker.name.firstName(),
     email: "user@test.com",
-    password: "test1234"
-  }
+    password: "test1234",
+  },
 ];
 
 exports.users = async () => {

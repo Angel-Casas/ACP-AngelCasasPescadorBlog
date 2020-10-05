@@ -19,7 +19,8 @@ var app = express();
 //Set up mongoose connection
 var mongoose = require("mongoose");
 // var mongoDB = `${process.env.MONGO_DB_URI}/${process.env.DB_NAME}`;
-var mongoDB = "mongodb+srv://Admin:75tofATiF9UNWcJ6@cluster0.qldfs.mongodb.net/ACP-AngelCasasPescadorBlog?retryWrites=true&w=majority";
+var mongoDB =
+  "mongodb+srv://Admin:75tofATiF9UNWcJ6@cluster0.qldfs.mongodb.net/ACP-AngelCasasPescadorBlog?retryWrites=true&w=majority";
 // var mongoDB = 'mongodb+srv://Admin:75tofATiF9UNWcJ6@cluster0-qldfs.mongodb.net/blog_database?retryWrites=true&w=majority';
 console.log(mongoDB);
 const option = {
