@@ -202,6 +202,10 @@ exports.post_create_post = [
     .isLength({ min: 1 })
     .trim()
     .withMessage("Preview must be specified."),
+  body("information")
+    .isLength({ min: 1 })
+    .trim()
+    .withMessage("Information must be specified."),
   body("titulo")
     .isLength({ min: 1 })
     .trim()
@@ -215,6 +219,10 @@ exports.post_create_post = [
     .isLength({ min: 1 })
     .trim()
     .withMessage("La previa debe ser especificada."),
+  body("informacion")
+    .isLength({ min: 1 })
+    .trim()
+    .withMessage("Información debe ser especificada."),
   body("cover")
     .isLength({ min: 1 })
     .trim()
@@ -223,8 +231,10 @@ exports.post_create_post = [
   // Sanitize fields
   body("title").escape(),
   body("preview").escape(),
+  body("information").escape(),
   body("titulo").escape(),
   body("previa").escape(),
+  body("informacion").escape(),
 
   // Process request after validation and sanitization
   async (req, res, next) => {
@@ -237,9 +247,11 @@ exports.post_create_post = [
         title: req.body.title,
         body: req.body.content,
         preview: req.body.preview,
+        information: req.body.information,
         titulo: req.body.titulo,
         cuerpo: req.body.contenido,
         previo: req.body.previa,
+        informacion: req.body.informacion,
         section: req.body.section,
         cover: req.body.cover,
       });
@@ -309,6 +321,10 @@ exports.post_edit_post = [
     .isLength({ min: 1 })
     .trim()
     .withMessage("Preview must be specified."),
+  body("information")
+    .isLength({ min: 1 })
+    .trim()
+    .withMessage("Information must be specified."),
   body("titulo")
     .isLength({ min: 1 })
     .trim()
@@ -321,12 +337,18 @@ exports.post_edit_post = [
     .isLength({ min: 1 })
     .trim()
     .withMessage("Previa must be specified."),
+  body("informacion")
+    .isLength({ min: 1 })
+    .trim()
+    .withMessage("La información debe ser especificada."),
 
   // Sanitize fields
   body("title").escape(),
   body("preview").escape(),
+  body("information").escape(),
   body("titulo").escape(),
   body("previa").escape(),
+  body("informacion").escape(),
 
   // Process request after validation and sanitization
   async (req, res, next) => {
@@ -338,9 +360,11 @@ exports.post_edit_post = [
       title: req.body.title,
       body: req.body.content,
       preview: req.body.preview,
+      information: req.body.information,
       titulo: req.body.titulo,
       cuerpo: req.body.contenido,
       previo: req.body.previa,
+      informacion: req.body.informacion,
       section: req.body.section,
       tags: [],
     };
