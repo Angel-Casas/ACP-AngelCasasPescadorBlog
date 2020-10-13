@@ -48,6 +48,7 @@
   --light-grey: rgb(170, 170, 170);
   --main-black: rgb(59, 62, 64);
   --main-red: rgb(254, 82, 82);
+  --main-orange: rgb(255, 111, 45);
 }
 
 /**** COMMON ATTRIBUTES ****/
@@ -190,6 +191,9 @@ summary:focus {
 }
 p {
   margin: 1em 0;
+}
+.info {
+  border-bottom: 1px solid var(--color);
 }
 .error {
   color: var(--main-red) !important;

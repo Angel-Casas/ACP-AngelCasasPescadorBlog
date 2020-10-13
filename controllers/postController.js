@@ -153,6 +153,7 @@ exports.post_instance = function (req, res, next) {
           return next(err);
         }
         // On success
+        console.log(post);
         if (req.params.lang === "EN") {
           res.render("post-EN", {
             title: post.title,
@@ -427,4 +428,25 @@ exports.privacy_get = function (req, res, next) {
   } else {
     res.render("privacy-policy-ES");
   }
+};
+
+// Switch post from preview to Full on POST
+exports.switch_preview2full_post = function (req, res, next) {
+  Blog.findByIdAndUpdate(req.params.id, { published: true }, function (
+    err,
+    post
+  ) {
+    if (err) {
+      console.log("Error finding post on Switch preview post: " + err);
+      return next(err);
+    }
+    // Successfull so return to post
+    console.log("Updated post with new content");
+    console.log(post);
+    if (req.params.lang === "EN") {
+      res.redirect("/EN/" + post.url);
+    } else {
+      res.redirect("/ES/" + post.url);
+    }
+  });
 };

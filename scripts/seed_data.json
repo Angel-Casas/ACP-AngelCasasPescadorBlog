@@ -3,9 +3,11 @@
     "title": "TestTitle1",
     "body": "<section id='sub-header-1'><h3>TAKUA1ENG</h3></section>",
     "preview": "TestPreview1",
+    "information": "Information relevant to this article",
     "titulo": "PruebaTitulo1",
     "cuerpo": "<section id='sub-header-1'><h3>TAKUA1ESP</h3></section>",
     "previo": "PruebaPrevia1",
+    "informacion": "Información relevante a este artículo",
     "section": "CS",
     "tags": [
       "TestTag1",
@@ -16,12 +18,29 @@
     "title": "TestTitle2",
     "body": "<section id='sub-header-1'><h3>TAKUA2ENG</h3></section>",
     "preview": "TestPreview2",
+    "information": "Information relevant to this article",
     "titulo": "PruebaTitulo2",
     "cuerpo": "<section id='sub-header-1'><h3>TAKUA2ESP</h3></section>",
     "previo": "PruebaPrevia2",
+    "informacion": "Información relevante para este artículo",
     "section": "NATURE",
     "tags": [
       "TestTag1",
+      "TestTag3"
+    ]
+  },
+  {
+    "title": "Surely just a test",
+    "body": "<section id='sub-header-1'><h3>Nothing akward in this title</h3></section>",
+    "preview": "Basically a preview.",
+    "information": "Bringing clearest information about this article.",
+    "titulo": "Artículo muy especial",
+    "cuerpo": "<section id='sub-header-1'><h3>Bien claro</h3></section>",
+    "previo": "Buena previa siempre.",
+    "informacion": "Información relevante para este artículo",
+    "section": "MATHEMATICS",
+    "tags": [
+      "TestTag2",
       "TestTag3"
     ]
   }
