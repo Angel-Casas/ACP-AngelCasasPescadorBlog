@@ -45,6 +45,7 @@
     "validator": "^13.1.1"
   },
   "devDependencies": {
+    "@websanova/vue-auth": "^4.0.3",
     "babel-cli": "^6.26.0",
     "babel-plugin-add-module-exports": "^1.0.2",
     "babel-preset-env": "^1.7.0",

@@ -876,6 +876,10 @@ input[type="submit"]:hover {
   color: var(--main-red);
   font-weight: bold;
 }
+.box .detail .atention {
+  color: var(--main-gold);
+  font-weight: bold;
+}
 
 /**** ABOUT ****/
 
