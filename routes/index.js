@@ -20,6 +20,9 @@ router.get("/:lang/about", postController.about_section_get);
 // Projects page route
 router.get("/:lang/projects", postController.projects_section_get);
 
+// Photography page route
+router.get("/:lang/photography", postController.photography_section_get);
+
 // POST ROUTES
 
 // GET request for posts list landing page

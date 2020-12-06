@@ -26,7 +26,7 @@ block content
         a(href="/EN/" + post.url)
           div.cover(style=`background-image: url(${post.cover});`)
           h4= post.title
-          time.post-date(date-time=post.date) #{post.post_time_formatted}
+          time.post-date(date-time=post.date) #{post.post_time_formated}
         p.preview= post.preview
         .entry-small
           .tags

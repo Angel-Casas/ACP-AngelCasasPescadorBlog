@@ -537,18 +537,17 @@ body {
   height: 50vw;
   min-height: 200px;
   max-height: 300px;
-  padding: 2.5rem 0.5rem;
   margin: 1rem 0;
 }
 .preview-ul {
   display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
-  align-items: center;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
   width: 100%;
 }
 .preview-li {
-  width: 100%;
+  width: 500px;
   height: 100%;
   position: relative;
   overflow: hidden;
@@ -785,6 +784,32 @@ input[type="submit"]:hover {
 .button:hover {
   background-color: var(--color);
   color: var(--bg);
+}
+
+/**** PHOTOGRAPHY ****/
+
+.image-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-flow: dense;
+  grid-gap: 1rem;
+}
+.image-individual {
+  width: 100%;
+  height: 100%;
+}
+.square {
+  grid-row-end: span 1;
+  grid-column-end: span 2;
+}
+.portrait {
+  grid-row-end: span 1;
+}
+.landscape {
+  grid-column-end: span 2;
+}
+.image-individual img {
+  object-fit: cover;
 }
 
 /**** BOOKS ****/
@@ -1028,6 +1053,12 @@ input[type="submit"]:hover {
   .post {
     padding: 0 1.5rem;
   }
+  .image-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: dense;
+    grid-gap: .5rem;
+  }
 }
 
 @media (min-width: 1100px) {
@@ -1064,6 +1095,12 @@ input[type="submit"]:hover {
   }
   .post {
     min-width: 600px;
+  }
+  .image-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-flow: dense;
+    grid-gap: 1rem;
   }
   .footer-personal {
     display: flex;

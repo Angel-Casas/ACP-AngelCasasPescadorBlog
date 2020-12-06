@@ -427,6 +427,15 @@ exports.post_delete_post = function (req, res, next) {
   });
 };
 
+// Handle photography section on GET
+exports.photography_section_get = function (req, res, next) {
+  if (req.params.lang === "EN") {
+    res.render("photography-EN");
+  } else {
+    res.render("photography-ES");
+  }
+};
+
 // Handle about section on GET
 exports.about_section_get = function (req, res, next) {
   if (req.params.lang === "EN") {
