@@ -15,7 +15,10 @@ html(lang='es-ES')
   body.dark
     input#light-input.sr-only(type='checkbox', autocomplete='off')
     label#light-label.hidden(for='light-input')
-      span Claro | Oscuro
+      span 
+        i(class="fas fa-sun")
+        span |
+        i(class="far fa-moon")
     // light-Input dark/light mode
     input#language-input.sr-only(type='checkbox', autocomplete='off')
     label#language-label.hidden(for='language-input')

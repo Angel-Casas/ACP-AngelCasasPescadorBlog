@@ -351,10 +351,16 @@ body {
 #light-label:hover {
   opacity: 1;
 }
+#light-input:checked + #light-label .fa-moon {
+  color: var(--color);
+}
+#light-input:not(:checked) + #light-label .fa-sun {
+  color: var(--color);
+}
 #light-label span {
   position: relative;
 }
-#light-label span::after {
+#light-label > span::after {
   content: "";
   background: var(--color);
   position: absolute;
@@ -364,14 +370,17 @@ body {
   height: 3px;
   transition: left 0.3s ease-in-out;
 }
-#light-label:hover span::after {
+#light-label:hover > span::after {
   left: 0;
 }
-#light-input:checked + #light-label span::after {
+#light-input:checked + #light-label > span::after {
   left: 50%;
 }
-#light-input:checked + #light-label:hover span::after {
+#light-input:checked + #light-label:hover > span::after {
   left: 70%;
+}
+#light-label i {
+  width: 50px;
 }
 
 /**** HEADER ****/
