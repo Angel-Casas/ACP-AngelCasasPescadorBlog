@@ -435,35 +435,35 @@ body {
   width: 40px;
   height: 40px;
   right: 10px;
-  transform-origin: 25px center;
+  transform-origin: 24px center;
   animation: clockwise-rotation 4s linear infinite;
 }
 .circle-icon-box .medium {
   width: 30px;
   height: 30px;
   right: 20px;
-  transform-origin: 20px center;
+  transform-origin: 19px center;
   animation: clockwise-rotation 4s linear infinite;
 }
 .circle-icon-box .small {
   width: 20px;
   height: 20px;
   right: 30px;
-  transform-origin: 15px center;
+  transform-origin: 14px center;
   animation: clockwise-rotation 4s linear infinite;
 }
 .circle-icon-box .tiny {
   width: 10px;
   height: 10px;
   right: 35px;
-  transform-origin: 10px center;
+  transform-origin: 9px center;
   animation: clockwise-rotation 4s ease-in-out infinite;
 }
 .circle-icon-box .micro {
   width: 5px;
   height: 5px;
   right: 40px;
-  transform-origin: 5px center;
+  transform-origin: 4px center;
   animation: clockwise-rotation 4s ease-in-out infinite;
 }
 
