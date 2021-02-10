@@ -365,7 +365,7 @@ body {
   background: var(--color);
   position: absolute;
   bottom: -30%;
-  left: 10%;
+  left: 16%;
   width: 30%;
   height: 3px;
   transition: left 0.3s ease-in-out;
@@ -374,7 +374,7 @@ body {
   left: 0;
 }
 #light-input:checked + #light-label > span::after {
-  left: 50%;
+  left: 53%;
 }
 #light-input:checked + #light-label:hover > span::after {
   left: 70%;
