@@ -560,7 +560,6 @@ body {
   height: 50vw;
   min-height: 200px;
   max-height: 300px;
-  margin: 1rem 0;
 }
 .preview-ul {
   display: flex;
@@ -582,10 +581,11 @@ body {
   justify-content: center;
   align-items: center;
   padding: 0 1em;
+  transition: background 0.5s ease-in-out;
 }
 .post-preview:hover {
   background: rgba(0, 0, 0, 0.1);
-  transition: background 0.3s ease-in-out;
+  transition: background 0.5s ease-in-out;
 }
 .post-preview > a {
   width: 100%;
